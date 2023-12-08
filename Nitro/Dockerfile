@@ -1,8 +1,8 @@
-FROM ubuntu:20.04
+FROM debian:bullseye-slim
 
-# Install curl and sudo
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends sudo curl jq numactl && \
+    apt-get install -y curl && \
+    apt-get install -y --no-install-recommends sudo jq numactl && \
     curl -sfL https://raw.githubusercontent.com/janhq/nitro/main/install.sh | sudo /bin/bash - && \
     mkdir /models && \
     apt-get remove --purge -y curl jq && \

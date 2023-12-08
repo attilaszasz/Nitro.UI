@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nitro:
+    image: ghcr.io/attilaszasz/nitro:latest
+    container_name: nitro
+    ports:
+      - 3928:3928
+    volumes:
+      - ./models:/models
+    
